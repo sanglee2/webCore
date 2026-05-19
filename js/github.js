@@ -47,7 +47,7 @@ const fetchProjects = async () => {
   render(STATE.LOADING);
 
   try {
-    const res = await fetch(`https://api.github.com/users/${USERNAME}/repos`);
+    const res = await fetch(`${CONFIG.GITHUB_API_URL}/${USERNAME}/repos`);
     if (!res.ok) throw new Error(res.status);
 
     const repos = await res.json();
