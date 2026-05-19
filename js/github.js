@@ -1,4 +1,4 @@
-const USERNAME = 'sanglee2';
+const USERNAME = CONFIG.GITHUB_USERNAME;
 const container = document.querySelector('#projects');
 
 // ① 상태 정의 — 가능한 상태값을 한 곳에서 관리
