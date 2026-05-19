@@ -73,6 +73,194 @@ section {
 }
 
 /* ==============================
+   Section Title
+============================== */
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-lg);
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 4px;
+  background-color: var(--color-primary);
+  border-radius: 2px;
+  margin-top: 8px;
+}
+
+/* ==============================
+   Hero
+============================== */
+#hero {
+  min-height: calc(100vh - var(--header-height));
+  display: flex;
+  align-items: center;
+}
+
+.hero-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-lg);
+  text-align: center;
+  width: 100%;
+}
+
+.hero-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: var(--color-surface);
+  border: 3px solid var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: var(--color-primary);
+}
+
+.hero-greeting {
+  font-size: 1.1rem;
+  color: var(--color-primary);
+  font-weight: 500;
+  margin-bottom: var(--spacing-sm);
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-md);
+}
+
+.hero-desc {
+  color: var(--color-text);
+  opacity: 0.75;
+  line-height: 1.8;
+  margin-bottom: var(--spacing-lg);
+}
+
+.hero-btns {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 0.6rem 1.4rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: opacity var(--transition), transform var(--transition);
+}
+
+.btn:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+.btn-outline {
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+}
+
+/* ==============================
+   About
+============================== */
+.about-inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.about-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 12px;
+  background-color: var(--color-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  color: var(--color-primary);
+}
+
+.about-text p {
+  margin-bottom: var(--spacing-md);
+  line-height: 1.8;
+  opacity: 0.85;
+}
+
+.about-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-md);
+}
+
+.about-info li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.about-info i {
+  color: var(--color-primary);
+  width: 16px;
+}
+
+/* ==============================
+   Skills
+============================== */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-md);
+}
+
+.skill-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  transition: transform var(--transition), border-color var(--transition);
+}
+
+.skill-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-primary);
+}
+
+.skill-card i {
+  font-size: 2rem;
+  color: var(--color-primary);
+}
+
+.skill-card span {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.skill-card p {
+  font-size: 0.85rem;
+  opacity: 0.65;
+}
+
+/* ==============================
    Scroll 애니메이션
 ============================== */
 section {
@@ -133,10 +321,42 @@ section.visible {
    Footer
 ============================== */
 footer {
-  text-align: center;
   padding: var(--spacing-lg);
   background-color: var(--color-surface);
   color: var(--color-text);
+  border-top: 1px solid var(--color-border);
+}
+
+.footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.footer-links {
+  display: flex;
+  gap: var(--spacing-md);
+  font-size: 1.3rem;
+}
+
+.footer-links a {
+  color: var(--color-text);
+  transition: color var(--transition);
+}
+
+.footer-links a:hover {
+  color: var(--color-primary);
+}
+
+/* ==============================
+   Contact 설명
+============================== */
+.contact-desc {
+  margin-bottom: var(--spacing-lg);
+  opacity: 0.75;
 }
 
 /* ==============================
@@ -194,8 +414,31 @@ footer {
     display: none;
   }
 
+  .hero-inner {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .hero-btns {
+    justify-content: flex-start;
+  }
+
+  .about-inner {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   .project-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-inner {
+    flex-direction: row;
+    justify-content: space-between;
   }
 }
 

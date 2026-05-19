@@ -3,16 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
+    <title>Sangmin Lee | Portfolio</title>
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/variables.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet" />
   </head>
   <body>
 
     <header>
       <nav>
-        <div class="logo">Portfolio</div>
+        <div class="logo">Sangmin.dev</div>
         <ul class="nav-links">
           <li><a href="#hero">Home</a></li>
           <li><a href="#about">About</a></li>
@@ -26,41 +28,118 @@
     </header>
 
     <main>
+
+      <!-- Hero -->
       <section id="hero">
-        <h1>안녕하세요</h1>
-        <p>프론트엔드 개발자입니다.</p>
+        <div class="hero-inner">
+          <div class="hero-avatar">
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <div class="hero-text">
+            <p class="hero-greeting">안녕하세요 👋</p>
+            <h1>이상민입니다</h1>
+            <p class="hero-desc">웹의 기초부터 차근차근 쌓아가는 개발자입니다.<br />사용자 경험을 중심으로 생각하고, 코드로 구현합니다.</p>
+            <div class="hero-btns">
+              <a href="#projects" class="btn btn-primary">Projects 보기</a>
+              <a href="#contact" class="btn btn-outline">Contact</a>
+            </div>
+          </div>
+        </div>
       </section>
 
+      <!-- About -->
       <section id="about">
-        <h2>About</h2>
+        <h2 class="section-title">About</h2>
+        <div class="about-inner">
+          <div class="about-img">
+            <i class="fa-solid fa-laptop-code"></i>
+          </div>
+          <div class="about-text">
+            <p>HTML, CSS, JavaScript를 기반으로 웹 개발을 시작했습니다. 단순히 동작하는 코드가 아니라 <strong>왜 이렇게 작동하는지</strong>를 이해하며 성장하고 있습니다.</p>
+            <p>현재는 DOM 조작, 이벤트 처리, 비동기 처리 등 웹의 핵심 개념을 학습하며 React 학습을 준비하고 있습니다.</p>
+            <ul class="about-info">
+              <li><i class="fa-solid fa-location-dot"></i> Seoul, Korea</li>
+              <li><i class="fa-solid fa-envelope"></i> succ2der@gmail.com</li>
+              <li><i class="fa-brands fa-github"></i>
+                <a href="https://github.com/sanglee2" target="_blank" rel="noopener">github.com/sanglee2</a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </section>
 
+      <!-- Skills -->
       <section id="skills">
-        <h2>Skills</h2>
+        <h2 class="section-title">Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <i class="fa-brands fa-html5"></i>
+            <span>HTML5</span>
+            <p>시맨틱 태그, 접근성</p>
+          </div>
+          <div class="skill-card">
+            <i class="fa-brands fa-css3-alt"></i>
+            <span>CSS3</span>
+            <p>Flexbox, Grid, 반응형</p>
+          </div>
+          <div class="skill-card">
+            <i class="fa-brands fa-js"></i>
+            <span>JavaScript</span>
+            <p>ES6+, DOM, 비동기</p>
+          </div>
+          <div class="skill-card">
+            <i class="fa-brands fa-python"></i>
+            <span>Python</span>
+            <p>기초 문법, 알고리즘</p>
+          </div>
+          <div class="skill-card">
+            <i class="fa-brands fa-github"></i>
+            <span>Git / GitHub</span>
+            <p>버전 관리, 협업</p>
+          </div>
+          <div class="skill-card">
+            <i class="fa-solid fa-mobile-screen"></i>
+            <span>Responsive</span>
+            <p>모바일 퍼스트 설계</p>
+          </div>
+        </div>
       </section>
 
+      <!-- Projects (GitHub API로 렌더링) -->
       <section id="projects">
       </section>
 
+      <!-- Contact -->
       <section id="contact">
-        <h2>Contact</h2>
+        <h2 class="section-title">Contact</h2>
+        <p class="contact-desc">궁금한 점이나 협업 제안이 있다면 편하게 연락주세요.</p>
         <form id="contact-form">
           <label for="name">이름</label>
-          <input type="text" id="name" name="name" />
+          <input type="text" id="name" name="name" placeholder="홍길동" />
 
           <label for="email">이메일</label>
-          <input type="email" id="email" name="email" />
+          <input type="email" id="email" name="email" placeholder="example@email.com" />
 
           <label for="message">메시지</label>
-          <textarea id="message" name="message"></textarea>
+          <textarea id="message" name="message" placeholder="안녕하세요! ..."></textarea>
 
-          <button type="submit">보내기</button>
+          <button type="submit">
+            <i class="fa-solid fa-paper-plane"></i> 보내기
+          </button>
         </form>
       </section>
+
     </main>
 
     <footer>
-      <p>&copy; 2026 Portfolio</p>
+      <div class="footer-inner">
+        <p>© 2026 Sangmin Lee</p>
+        <div class="footer-links">
+          <a href="https://github.com/sanglee2" target="_blank" rel="noopener" aria-label="GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+        </div>
+      </div>
     </footer>
 
     <script src="js/config.js" defer></script>
